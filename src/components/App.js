@@ -18,10 +18,10 @@ var colors = [
 
 const App = () => {
   console.log(colors)
-  const[quote,setquote]=useState({content: "",author: ""})
+  const[quote,setquote]=useState(null);
   useEffect(()=>{
     fetch("https://api.quotable.io/random").then(el=>el.json()).then(el=>{setquote(el)})
-  },[])
+  },[]);
   return (
       <div id="main">
         <div id="wrapper">
