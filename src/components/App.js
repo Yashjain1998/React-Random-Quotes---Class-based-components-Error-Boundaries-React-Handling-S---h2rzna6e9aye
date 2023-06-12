@@ -25,8 +25,8 @@ const App = () => {
   return (
       <div id="main">
         <div id="wrapper">
-          <div className="quote-text">{quote.content}</div>
-          <div className="quote-author">{quote.author}</div>
+          <div className="quote-text">{(quote!=null)?quote.content:''}</div>
+          <div className="quote-author">{(quote!=null)?quote.author:''}</div>
           <button id="new-quote" onClick={()=>fetch("https://api.quotable.io/random").then(el=>el.json()).then(el=>{setquote(el)})}>quote</button>
         </div>
       </div>
